@@ -1,11 +1,22 @@
 package io.quarkus.amazon.lambda.alexa;
 
+import java.util.List;
+
+import io.quarkus.arc.deployment.IgnoreSplitPackageBuildItem;
 import io.quarkus.deployment.annotations.BuildProducer;
 import io.quarkus.deployment.annotations.BuildStep;
+import io.quarkus.deployment.builditem.FeatureBuildItem;
 import io.quarkus.deployment.builditem.IndexDependencyBuildItem;
 import io.quarkus.deployment.builditem.nativeimage.NativeImageProxyDefinitionBuildItem;
 
 public class AlexaProcessor {
+
+    private static final String FEATURE = "amazon-alexa";
+
+    @BuildStep
+    FeatureBuildItem feature() {
+        return new FeatureBuildItem(FEATURE);
+    }
 
     @BuildStep
     void addDependencies(BuildProducer<IndexDependencyBuildItem> indexDependency) {
@@ -23,6 +34,12 @@ public class AlexaProcessor {
     NativeImageProxyDefinitionBuildItem httpProxies() {
         return new NativeImageProxyDefinitionBuildItem("org.apache.http.conn.HttpClientConnectionManager",
                 "org.apache.http.pool.ConnPoolControl", "com.amazonaws.http.conn.Wrapped");
+    }
+
+    @BuildStep
+    IgnoreSplitPackageBuildItem ignoreSplitPackages() {
+        return new IgnoreSplitPackageBuildItem(
+                List.of("com.amazon.ask.builder", "com.amazon.ask.model.services", "com.amazon.ask"));
     }
 
 }
