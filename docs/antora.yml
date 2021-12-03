@@ -1,0 +1,5 @@
+name: quarkus-amazon-alexa
+title: Quarkus Amazon Alexa
+version: dev
+nav:
+  - modules/ROOT/nav.adoc
