@@ -1,0 +1,19 @@
+= Quarkus Amazon Alexa
+
+include::./includes/attributes.adoc[]
+
+This Quarkus extension aims at making the Amazon Alexa SDK work in native executables.
+
+== Installation
+
+If you want to use this extension, you need to add the `io.quarkiverse.amazonalexa:quarkus-amazon-alexa` extension first.
+In your `pom.xml` file, add:
+
+[source,xml,subs=attributes+]
+----
+<dependency>
+    <groupId>io.quarkiverse.amazonalexa</groupId>
+    <artifactId>quarkus-amazon-alexa</artifactId>
+    <version>{quarkus-amazon-alexa-version}</version>
+</dependency>
+----
