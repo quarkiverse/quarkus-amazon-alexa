@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "oztimpower",
+      "name": "Timothy Power",
+      "avatar_url": "https://avatars.githubusercontent.com/u/35548347?v=4",
+      "profile": "https://github.com/oztimpower",
+      "contributions": [
+        "code",
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "quarkus-amazon-alexa",
+  "projectOwner": "quarkiverse",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
