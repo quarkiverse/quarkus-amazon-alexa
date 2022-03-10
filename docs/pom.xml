@@ -4,7 +4,7 @@
     <parent>
         <groupId>io.quarkiverse.amazonalexa</groupId>
         <artifactId>quarkus-amazon-alexa-parent</artifactId>
-        <version>1.0.2-SNAPSHOT</version>
+        <version>1.0.2</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
