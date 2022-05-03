@@ -26,7 +26,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <quarkus.version>2.7.4.Final</quarkus.version>
 
-        <aws-alexa-sdk.version>2.43.0</aws-alexa-sdk.version>
+        <aws-alexa-sdk.version>2.43.4</aws-alexa-sdk.version>
     </properties>
     <dependencyManagement>
         <dependencies>
