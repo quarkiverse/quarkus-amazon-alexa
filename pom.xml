@@ -8,7 +8,7 @@
     </parent>
     <groupId>io.quarkiverse.amazonalexa</groupId>
     <artifactId>quarkus-amazon-alexa-parent</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.3</version>
     <packaging>pom</packaging>
     <name>Quarkus - Amazon Alexa - Parent</name>
     <modules>
@@ -92,4 +92,8 @@
             </plugins>
         </pluginManagement>
     </build>
+
+  <scm>
+    <tag>1.0.3</tag>
+  </scm>
 </project>
