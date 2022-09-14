@@ -1,4 +1,4 @@
-package io.quarkus.amazon.lambda.alexa;
+package io.quarkus.amazon.lambda.alexa.deployment;
 
 import java.util.List;
 
@@ -8,6 +8,7 @@ import io.quarkus.deployment.annotations.BuildStep;
 import io.quarkus.deployment.builditem.FeatureBuildItem;
 import io.quarkus.deployment.builditem.IndexDependencyBuildItem;
 import io.quarkus.deployment.builditem.nativeimage.NativeImageProxyDefinitionBuildItem;
+import io.quarkus.deployment.builditem.nativeimage.RuntimeInitializedClassBuildItem;
 
 public class AlexaProcessor {
 
@@ -42,4 +43,13 @@ public class AlexaProcessor {
                 List.of("com.amazon.ask.builder", "com.amazon.ask.model.services", "com.amazon.ask"));
     }
 
+    @BuildStep
+    void runtimeInitializedClasses(BuildProducer<RuntimeInitializedClassBuildItem> runtimeInitializedClasses) {
+        runtimeInitializedClasses
+                .produce(new RuntimeInitializedClassBuildItem(com.amazonaws.retry.PredefinedBackoffStrategies.class.getName()));
+        runtimeInitializedClasses
+                .produce(new RuntimeInitializedClassBuildItem(com.amazonaws.retry.PredefinedRetryPolicies.class.getName()));
+        runtimeInitializedClasses
+                .produce(new RuntimeInitializedClassBuildItem(com.amazonaws.ClientConfiguration.class.getName()));
+    }
 }
