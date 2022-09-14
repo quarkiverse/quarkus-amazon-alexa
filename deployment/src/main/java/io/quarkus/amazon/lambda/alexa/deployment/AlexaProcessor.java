@@ -1,4 +1,4 @@
-package io.quarkus.amazon.lambda.alexa;
+package io.quarkus.amazon.lambda.alexa.deployment;
 
 import java.util.List;
 
