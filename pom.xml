@@ -26,7 +26,9 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <quarkus.version>2.12.2.Final</quarkus.version>
 
+        <!-- both versions need to be kept in sync -->
         <aws-alexa-sdk.version>2.44.0</aws-alexa-sdk.version>
+        <aws-java-sdk.version>1.11.420</aws-java-sdk.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -34,6 +36,13 @@
                 <groupId>io.quarkus</groupId>
                 <artifactId>quarkus-bom</artifactId>
                 <version>${quarkus.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.amazonaws</groupId>
+                <artifactId>aws-java-sdk-bom</artifactId>
+                <version>${aws-java-sdk.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -49,10 +58,6 @@
                     <exclusion>
                         <groupId>commons-logging</groupId>
                         <artifactId>commons-logging</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>joda-time</groupId>
-                        <artifactId>joda-time</artifactId>
                     </exclusion>
                     <exclusion>
                         <groupId>com.amazon.alexa</groupId>
