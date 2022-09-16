@@ -58,6 +58,19 @@ public class AlexaProcessor {
     @BuildStep
     void reflection(BuildProducer<ReflectiveClassBuildItem> reflectiveClasses) {
         reflectiveClasses.produce(new ReflectiveClassBuildItem(true, true, com.amazonaws.auth.AWS4Signer.class.getName()));
+
+        reflectiveClasses.produce(
+                new ReflectiveClassBuildItem(true, true, com.amazonaws.partitions.model.CredentialScope.class.getName()));
+        reflectiveClasses
+                .produce(new ReflectiveClassBuildItem(true, true, com.amazonaws.partitions.model.Endpoint.class.getName()));
+        reflectiveClasses
+                .produce(new ReflectiveClassBuildItem(true, true, com.amazonaws.partitions.model.Partition.class.getName()));
+        reflectiveClasses
+                .produce(new ReflectiveClassBuildItem(true, true, com.amazonaws.partitions.model.Partitions.class.getName()));
+        reflectiveClasses
+                .produce(new ReflectiveClassBuildItem(true, true, com.amazonaws.partitions.model.Region.class.getName()));
+        reflectiveClasses
+                .produce(new ReflectiveClassBuildItem(true, true, com.amazonaws.partitions.model.Service.class.getName()));
     }
 
     @BuildStep
