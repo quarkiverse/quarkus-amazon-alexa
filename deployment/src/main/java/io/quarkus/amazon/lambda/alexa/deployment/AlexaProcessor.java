@@ -8,6 +8,8 @@ import io.quarkus.deployment.annotations.BuildStep;
 import io.quarkus.deployment.builditem.FeatureBuildItem;
 import io.quarkus.deployment.builditem.IndexDependencyBuildItem;
 import io.quarkus.deployment.builditem.nativeimage.NativeImageProxyDefinitionBuildItem;
+import io.quarkus.deployment.builditem.nativeimage.NativeImageResourceBuildItem;
+import io.quarkus.deployment.builditem.nativeimage.ReflectiveClassBuildItem;
 import io.quarkus.deployment.builditem.nativeimage.RuntimeInitializedClassBuildItem;
 
 public class AlexaProcessor {
@@ -51,5 +53,28 @@ public class AlexaProcessor {
                 .produce(new RuntimeInitializedClassBuildItem(com.amazonaws.retry.PredefinedRetryPolicies.class.getName()));
         runtimeInitializedClasses
                 .produce(new RuntimeInitializedClassBuildItem(com.amazonaws.ClientConfiguration.class.getName()));
+    }
+
+    @BuildStep
+    void reflection(BuildProducer<ReflectiveClassBuildItem> reflectiveClasses) {
+        reflectiveClasses.produce(new ReflectiveClassBuildItem(true, true, com.amazonaws.auth.AWS4Signer.class.getName()));
+
+        reflectiveClasses.produce(
+                new ReflectiveClassBuildItem(true, true, com.amazonaws.partitions.model.CredentialScope.class.getName()));
+        reflectiveClasses
+                .produce(new ReflectiveClassBuildItem(true, true, com.amazonaws.partitions.model.Endpoint.class.getName()));
+        reflectiveClasses
+                .produce(new ReflectiveClassBuildItem(true, true, com.amazonaws.partitions.model.Partition.class.getName()));
+        reflectiveClasses
+                .produce(new ReflectiveClassBuildItem(true, true, com.amazonaws.partitions.model.Partitions.class.getName()));
+        reflectiveClasses
+                .produce(new ReflectiveClassBuildItem(true, true, com.amazonaws.partitions.model.Region.class.getName()));
+        reflectiveClasses
+                .produce(new ReflectiveClassBuildItem(true, true, com.amazonaws.partitions.model.Service.class.getName()));
+    }
+
+    @BuildStep
+    void resources(BuildProducer<NativeImageResourceBuildItem> nativeImageResources) {
+        nativeImageResources.produce(new NativeImageResourceBuildItem("com/amazonaws/partitions/endpoints.json"));
     }
 }
