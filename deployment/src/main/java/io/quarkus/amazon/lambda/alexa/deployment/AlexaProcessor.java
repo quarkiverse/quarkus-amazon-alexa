@@ -71,6 +71,12 @@ public class AlexaProcessor {
                 .produce(new ReflectiveClassBuildItem(true, true, com.amazonaws.partitions.model.Region.class.getName()));
         reflectiveClasses
                 .produce(new ReflectiveClassBuildItem(true, true, com.amazonaws.partitions.model.Service.class.getName()));
+        reflectiveClasses
+                .produce(new ReflectiveClassBuildItem(true, true,
+                        com.amazonaws.services.dynamodbv2.model.ResourceInUseException.class.getName()));
+        reflectiveClasses
+                .produce(new ReflectiveClassBuildItem(true, true,
+                        com.fasterxml.jackson.databind.exc.InvalidDefinitionException.class.getName()));
     }
 
     @BuildStep
