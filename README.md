@@ -1,6 +1,6 @@
 # Quarkus Amazon Alexa
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Version](https://img.shields.io/maven-central/v/io.quarkiverse.amazonalexa/quarkus-amazon-alexa?logo=apache-maven&style=flat-square)](https://search.maven.org/artifact/io.quarkiverse.amazonalexa/quarkus-amazon-alexa)
@@ -23,6 +23,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center"><a href="https://github.com/oztimpower"><img src="https://avatars.githubusercontent.com/u/35548347?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Timothy Power</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-amazon-alexa/commits?author=oztimpower" title="Code">💻</a> <a href="#maintenance-oztimpower" title="Maintenance">🚧</a></td>
       <td align="center"><a href="https://lesincroyableslivres.fr/"><img src="https://avatars.githubusercontent.com/u/1279749?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Guillaume Smet</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-amazon-alexa/commits?author=gsmet" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/timguy"><img src="https://avatars.githubusercontent.com/u/14115943?v=4?s=100" width="100px;" alt=""/><br /><sub><b>timguy</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-amazon-alexa/commits?author=timguy" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
