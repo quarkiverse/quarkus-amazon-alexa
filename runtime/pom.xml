@@ -4,7 +4,7 @@
     <parent>
         <groupId>io.quarkiverse.amazonalexa</groupId>
         <artifactId>quarkus-amazon-alexa-parent</artifactId>
-        <version>999-SNAPSHOT</version>
+        <version>1.0.5</version>
     </parent>
     <artifactId>quarkus-amazon-alexa</artifactId>
     <name>Quarkus - Amazon Alexa - Runtime</name>
