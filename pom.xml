@@ -28,7 +28,7 @@
 
         <!-- both versions need to be kept in sync -->
         <aws-alexa-sdk.version>2.44.0</aws-alexa-sdk.version>
-        <aws-java-sdk.version>1.11.420</aws-java-sdk.version>
+        <aws-java-sdk.version>1.12.347</aws-java-sdk.version>
     </properties>
     <dependencyManagement>
         <dependencies>
