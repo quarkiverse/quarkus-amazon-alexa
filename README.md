@@ -13,7 +13,7 @@ The main purpose of this extension is to make the Amazon Alexa SDK work in a nat
 
 ## Compatibility
 
-| Quarkus | Quarkus Amazon Alexia |
+| Quarkus | Quarkus Amazon Alexa |
 |---------|-----------------------|
 | 2.x     | 1.x                   |
 | 3.x     | 2.x                   |
