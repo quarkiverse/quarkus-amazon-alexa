@@ -11,6 +11,13 @@ Quarkus Amazon Alexa is a Quarkus extension for the [Amazon Alexa SDK](https://d
 
 The main purpose of this extension is to make the Amazon Alexa SDK work in a native executable built with GraalVM/Mandrel.
 
+## Compatibility
+
+| Quarkus | Quarkus Amazon Alexia |
+|---------|-----------------------|
+| 2.x     | 1.x                   |
+| 3.x     | 2.x                   |
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
