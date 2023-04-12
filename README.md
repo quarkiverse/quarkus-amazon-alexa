@@ -11,6 +11,12 @@ Quarkus Amazon Alexa is a Quarkus extension for the [Amazon Alexa SDK](https://d
 
 The main purpose of this extension is to make the Amazon Alexa SDK work in a native executable built with GraalVM/Mandrel.
 
+## Hints for native
+- Could be that you need to adapt your own classes e.g. if they are using reflection.
+- See https://quarkus.io/guides/writing-native-applications-tips#registering-for-reflection for details
+- Example: If you use DynamoDBMapper you need to annotate your Entity with @RegisterForReflection. Otherwise you will "no mapping for HASH key" exception
+
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
