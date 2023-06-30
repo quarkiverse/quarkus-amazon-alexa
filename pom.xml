@@ -27,7 +27,7 @@
         <quarkus.version>3.0.0.Final</quarkus.version>
 
         <!-- both versions need to be kept in sync -->
-        <aws-alexa-sdk.version>2.71.0</aws-alexa-sdk.version>
+        <aws-alexa-sdk.version>2.79.0</aws-alexa-sdk.version>
         <aws-java-sdk.version>1.12.447</aws-java-sdk.version>
     </properties>
     <dependencyManagement>
