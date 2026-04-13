@@ -57,26 +57,16 @@ public class AlexaProcessor {
 
     @BuildStep
     void reflection(BuildProducer<ReflectiveClassBuildItem> reflectiveClasses) {
-        reflectiveClasses.produce(new ReflectiveClassBuildItem(true, true, com.amazonaws.auth.AWS4Signer.class.getName()));
-
-        reflectiveClasses.produce(
-                new ReflectiveClassBuildItem(true, true, com.amazonaws.partitions.model.CredentialScope.class.getName()));
-        reflectiveClasses
-                .produce(new ReflectiveClassBuildItem(true, true, com.amazonaws.partitions.model.Endpoint.class.getName()));
-        reflectiveClasses
-                .produce(new ReflectiveClassBuildItem(true, true, com.amazonaws.partitions.model.Partition.class.getName()));
-        reflectiveClasses
-                .produce(new ReflectiveClassBuildItem(true, true, com.amazonaws.partitions.model.Partitions.class.getName()));
-        reflectiveClasses
-                .produce(new ReflectiveClassBuildItem(true, true, com.amazonaws.partitions.model.Region.class.getName()));
-        reflectiveClasses
-                .produce(new ReflectiveClassBuildItem(true, true, com.amazonaws.partitions.model.Service.class.getName()));
-        reflectiveClasses
-                .produce(new ReflectiveClassBuildItem(true, true,
-                        com.amazonaws.services.dynamodbv2.model.ResourceInUseException.class.getName()));
-        reflectiveClasses
-                .produce(new ReflectiveClassBuildItem(true, true,
-                        com.fasterxml.jackson.databind.exc.InvalidDefinitionException.class.getName()));
+        reflectiveClasses.produce(ReflectiveClassBuildItem.builder(com.amazonaws.auth.AWS4Signer.class.getName(),
+                com.amazonaws.partitions.model.CredentialScope.class.getName(),
+                com.amazonaws.partitions.model.Endpoint.class.getName(),
+                com.amazonaws.partitions.model.Partition.class.getName(),
+                com.amazonaws.partitions.model.Partitions.class.getName(),
+                com.amazonaws.partitions.model.Region.class.getName(),
+                com.amazonaws.partitions.model.Service.class.getName(),
+                com.amazonaws.services.dynamodbv2.model.ResourceInUseException.class.getName(),
+                com.fasterxml.jackson.databind.exc.InvalidDefinitionException.class.getName()).constructors().methods().fields()
+                .build());
     }
 
     @BuildStep
