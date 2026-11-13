@@ -57,26 +57,35 @@ public class AlexaProcessor {
 
     @BuildStep
     void reflection(BuildProducer<ReflectiveClassBuildItem> reflectiveClasses) {
-        reflectiveClasses.produce(new ReflectiveClassBuildItem(true, true, com.amazonaws.auth.AWS4Signer.class.getName()));
+        reflectiveClasses.produce(
+                ReflectiveClassBuildItem.builder(com.amazonaws.auth.AWS4Signer.class.getName()).methods().fields().build());
 
         reflectiveClasses.produce(
-                new ReflectiveClassBuildItem(true, true, com.amazonaws.partitions.model.CredentialScope.class.getName()));
+                ReflectiveClassBuildItem.builder(com.amazonaws.partitions.model.CredentialScope.class.getName()).methods()
+                        .fields().build());
         reflectiveClasses
-                .produce(new ReflectiveClassBuildItem(true, true, com.amazonaws.partitions.model.Endpoint.class.getName()));
+                .produce(ReflectiveClassBuildItem.builder(com.amazonaws.partitions.model.Endpoint.class.getName()).methods()
+                        .fields().build());
         reflectiveClasses
-                .produce(new ReflectiveClassBuildItem(true, true, com.amazonaws.partitions.model.Partition.class.getName()));
+                .produce(ReflectiveClassBuildItem.builder(com.amazonaws.partitions.model.Partition.class.getName()).methods()
+                        .fields().build());
         reflectiveClasses
-                .produce(new ReflectiveClassBuildItem(true, true, com.amazonaws.partitions.model.Partitions.class.getName()));
+                .produce(ReflectiveClassBuildItem.builder(com.amazonaws.partitions.model.Partitions.class.getName()).methods()
+                        .fields().build());
         reflectiveClasses
-                .produce(new ReflectiveClassBuildItem(true, true, com.amazonaws.partitions.model.Region.class.getName()));
+                .produce(ReflectiveClassBuildItem.builder(com.amazonaws.partitions.model.Region.class.getName()).methods()
+                        .fields().build());
         reflectiveClasses
-                .produce(new ReflectiveClassBuildItem(true, true, com.amazonaws.partitions.model.Service.class.getName()));
+                .produce(ReflectiveClassBuildItem.builder(com.amazonaws.partitions.model.Service.class.getName()).methods()
+                        .fields().build());
         reflectiveClasses
-                .produce(new ReflectiveClassBuildItem(true, true,
-                        com.amazonaws.services.dynamodbv2.model.ResourceInUseException.class.getName()));
+                .produce(ReflectiveClassBuildItem
+                        .builder(com.amazonaws.services.dynamodbv2.model.ResourceInUseException.class.getName()).methods()
+                        .fields().build());
         reflectiveClasses
-                .produce(new ReflectiveClassBuildItem(true, true,
-                        com.fasterxml.jackson.databind.exc.InvalidDefinitionException.class.getName()));
+                .produce(ReflectiveClassBuildItem
+                        .builder(com.fasterxml.jackson.databind.exc.InvalidDefinitionException.class.getName()).methods()
+                        .fields().build());
     }
 
     @BuildStep
